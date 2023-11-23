@@ -2332,6 +2332,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9b2631dbc3c5244b839571f643f7439, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  soundManager: {fileID: 0}
+  keyBindingBtn: {fileID: 0}
+  showStatsBtn: {fileID: 0}
   quitGameBtn: {fileID: 1129917657}
   closeWindowBtn: {fileID: 304300605}
 --- !u!1660057539 &9223372036854775807
