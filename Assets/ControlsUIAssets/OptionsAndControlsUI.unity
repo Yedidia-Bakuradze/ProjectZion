@@ -2028,6 +2028,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2126781837}
+  - component: {fileID: 2126781838}
   m_Layer: 5
   m_Name: OptionsUI
   m_TagString: Untagged
@@ -2058,6 +2059,23 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2126781838
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2126781836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9b2631dbc3c5244b839571f643f7439, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundManager: {fileID: 806754680}
+  keyBindingBtn: {fileID: 1835087840}
+  showStatsBtn: {fileID: 1569074513}
+  quitGameBtn: {fileID: 1129917657}
+  closeWindowBtn: {fileID: 304300605}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
