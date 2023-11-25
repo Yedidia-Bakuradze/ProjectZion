@@ -1,5 +1,5 @@
 using System;
-using Unity.VisualScripting;
+using _GeneralAssets.Scripts;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,6 +7,7 @@ namespace ControlsUIAssets.Scripts
 {
     public class OptionsAndControlsUIScript : MonoBehaviour
     {
+        
         [SerializeField] private Button soundManager;
         [SerializeField] private Button keyBindingBtn;
         [SerializeField] private Button showStatsBtn;
@@ -17,9 +18,18 @@ namespace ControlsUIAssets.Scripts
         
         private void Awake()
         {
-            // soundManager.onClick.AddListener();
-            // keyBindingBtn.onClick.AddListener();
-            // showStatsBtn.onClick.AddListener();
+            soundManager.onClick.AddListener(() =>
+            {
+                Debug.Log("Yet developed!");
+            });
+            keyBindingBtn.onClick.AddListener(() =>
+            {
+                Debug.Log("Key binding isn't optional yet - We're using specific referenced key codes!");
+            });
+            showStatsBtn.onClick.AddListener(() =>
+            {
+                Debug.Log(GameStats.JoinDate);
+            });
             quitGameBtn.onClick.AddListener(Application.Quit);
             closeWindowBtn.onClick.AddListener(Hide);
         }
@@ -27,7 +37,7 @@ namespace ControlsUIAssets.Scripts
         {
             Hide();
         }
-        
+
         private void Update()
         {
             if (Input.GetKey(KeyCode.Escape))
@@ -35,7 +45,7 @@ namespace ControlsUIAssets.Scripts
                 Show();
             }
         }
-        
+
         /// <summary>
         /// Shows the UI.
         /// </summary>
