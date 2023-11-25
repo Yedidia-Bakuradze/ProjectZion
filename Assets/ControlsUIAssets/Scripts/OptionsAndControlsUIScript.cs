@@ -13,7 +13,7 @@ namespace ControlsUIAssets.Scripts
         [SerializeField] private Button quitGameBtn;
         [SerializeField] private Button closeWindowBtn;
 
-        
+        [SerializeField] private Transform UI;
         
         private void Awake()
         {
@@ -27,14 +27,21 @@ namespace ControlsUIAssets.Scripts
         {
             Hide();
         }
-
+        
+        private void Update()
+        {
+            if (Input.GetKey(KeyCode.Escape))
+            {
+                Show();
+            }
+        }
         
         /// <summary>
         /// Shows the UI.
         /// </summary>
         private void Show()
         {
-            gameObject.SetActive(true);
+            UI.gameObject.SetActive(true);
         }
         
         /// <summary>
@@ -42,8 +49,7 @@ namespace ControlsUIAssets.Scripts
         /// </summary>
         private void Hide()
         {
-            gameObject.SetActive(false);
-            Debug.Log("Close button was clicked");
+            UI.gameObject.SetActive(false);
         }
     }
 }
