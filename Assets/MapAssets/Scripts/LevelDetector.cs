@@ -1,3 +1,5 @@
+using UnityEditor;
+using UnityEditor.SearchService;
 using UnityEngine;
 
 namespace MapAssets.Scripts
@@ -6,6 +8,9 @@ namespace MapAssets.Scripts
     {
         private const string PLAYER_LAYER_MASK_NAME = "Player";
         private readonly Vector3 boxSize = new Vector3(2f, 0.1f, 2f);
+
+        [SerializeField] private string SceneName;
+        [SerializeField] private int SceneId;
 
         private void Update()
         {
