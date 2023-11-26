@@ -24,13 +24,22 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
     ""name"": ""PlayerInputActions"",
     ""maps"": [
         {
-            ""name"": ""Player"",
-            ""id"": ""40f2c4fd-4fc7-46a1-931d-5883d4b77d7c"",
+            ""name"": ""MapPlayer"",
+            ""id"": ""080452fb-d353-4494-8d55-308c02a36367"",
             ""actions"": [
                 {
-                    ""name"": ""OptionsPanel"",
+                    ""name"": ""Move"",
+                    ""type"": ""Value"",
+                    ""id"": ""fdc54738-9933-4a58-88c8-4bb76796189c"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""FastMode"",
                     ""type"": ""Button"",
-                    ""id"": ""fcdf699b-56f7-4f91-9b9c-baa614fbc3c7"",
+                    ""id"": ""d9a083fe-903b-47e7-bda1-536f900b1c22"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -39,24 +48,145 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             ],
             ""bindings"": [
                 {
-                    ""name"": """",
-                    ""id"": ""7fca7d90-f74b-4c56-9a7d-91fc3d1189ee"",
-                    ""path"": ""<Keyboard>/escape"",
+                    ""name"": ""WASD Keys"",
+                    ""id"": ""a881ea5e-3214-4072-9de7-3ad1bb9a11e0"",
+                    ""path"": ""2DVector"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""OptionsPanel"",
+                    ""action"": ""Move"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""f375b71f-41cc-43d8-a505-b3b83054e6b9"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""a198e503-b6ff-4ed8-81dc-a2937ceb19a0"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""1dd7b302-b4c2-4d39-90d0-beab0dee99cc"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""eadc66ac-40d6-4cc9-8136-fe25cb0cef91"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""Arrow Keys"",
+                    ""id"": ""3dbf5b3d-81dd-46b1-8a5c-dbed42f4c43f"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""6f185e17-2ac9-4b5c-82d1-c3db0602d852"",
+                    ""path"": ""<Keyboard>/upArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""381aa808-6d46-4089-ae67-0f259a5c9b58"",
+                    ""path"": ""<Keyboard>/downArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""2717de2b-4df5-44ab-94f4-564832093079"",
+                    ""path"": ""<Keyboard>/leftArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""2b716deb-cc1a-4785-b5ea-7e500d4f6e13"",
+                    ""path"": ""<Keyboard>/rightArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c1b9b12a-3ab6-4743-b58e-a8bc4ec45962"",
+                    ""path"": ""<Gamepad>/leftStick"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
-                    ""id"": ""4b01627e-eaa5-49b8-930c-d7f7ce500615"",
-                    ""path"": ""<Keyboard>/a"",
+                    ""id"": ""3847c54b-62e6-4a7d-8a69-6410825ad5fd"",
+                    ""path"": ""<Keyboard>/leftShift"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""OptionsPanel"",
+                    ""action"": ""FastMode"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""16da1ef0-bba9-4ff8-8c4f-82c9ced89342"",
+                    ""path"": ""<XInputController>/rightShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""FastMode"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -65,9 +195,10 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
     ],
     ""controlSchemes"": []
 }");
-        // Player
-        m_Player = asset.FindActionMap("Player", throwIfNotFound: true);
-        m_Player_OptionsPanel = m_Player.FindAction("OptionsPanel", throwIfNotFound: true);
+        // MapPlayer
+        m_MapPlayer = asset.FindActionMap("MapPlayer", throwIfNotFound: true);
+        m_MapPlayer_Move = m_MapPlayer.FindAction("Move", throwIfNotFound: true);
+        m_MapPlayer_FastMode = m_MapPlayer.FindAction("FastMode", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -126,53 +257,62 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         return asset.FindBinding(bindingMask, out action);
     }
 
-    // Player
-    private readonly InputActionMap m_Player;
-    private List<IPlayerActions> m_PlayerActionsCallbackInterfaces = new List<IPlayerActions>();
-    private readonly InputAction m_Player_OptionsPanel;
-    public struct PlayerActions
+    // MapPlayer
+    private readonly InputActionMap m_MapPlayer;
+    private List<IMapPlayerActions> m_MapPlayerActionsCallbackInterfaces = new List<IMapPlayerActions>();
+    private readonly InputAction m_MapPlayer_Move;
+    private readonly InputAction m_MapPlayer_FastMode;
+    public struct MapPlayerActions
     {
         private @PlayerInputActions m_Wrapper;
-        public PlayerActions(@PlayerInputActions wrapper) { m_Wrapper = wrapper; }
-        public InputAction @OptionsPanel => m_Wrapper.m_Player_OptionsPanel;
-        public InputActionMap Get() { return m_Wrapper.m_Player; }
+        public MapPlayerActions(@PlayerInputActions wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Move => m_Wrapper.m_MapPlayer_Move;
+        public InputAction @FastMode => m_Wrapper.m_MapPlayer_FastMode;
+        public InputActionMap Get() { return m_Wrapper.m_MapPlayer; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
         public bool enabled => Get().enabled;
-        public static implicit operator InputActionMap(PlayerActions set) { return set.Get(); }
-        public void AddCallbacks(IPlayerActions instance)
+        public static implicit operator InputActionMap(MapPlayerActions set) { return set.Get(); }
+        public void AddCallbacks(IMapPlayerActions instance)
         {
-            if (instance == null || m_Wrapper.m_PlayerActionsCallbackInterfaces.Contains(instance)) return;
-            m_Wrapper.m_PlayerActionsCallbackInterfaces.Add(instance);
-            @OptionsPanel.started += instance.OnOptionsPanel;
-            @OptionsPanel.performed += instance.OnOptionsPanel;
-            @OptionsPanel.canceled += instance.OnOptionsPanel;
+            if (instance == null || m_Wrapper.m_MapPlayerActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_MapPlayerActionsCallbackInterfaces.Add(instance);
+            @Move.started += instance.OnMove;
+            @Move.performed += instance.OnMove;
+            @Move.canceled += instance.OnMove;
+            @FastMode.started += instance.OnFastMode;
+            @FastMode.performed += instance.OnFastMode;
+            @FastMode.canceled += instance.OnFastMode;
         }
 
-        private void UnregisterCallbacks(IPlayerActions instance)
+        private void UnregisterCallbacks(IMapPlayerActions instance)
         {
-            @OptionsPanel.started -= instance.OnOptionsPanel;
-            @OptionsPanel.performed -= instance.OnOptionsPanel;
-            @OptionsPanel.canceled -= instance.OnOptionsPanel;
+            @Move.started -= instance.OnMove;
+            @Move.performed -= instance.OnMove;
+            @Move.canceled -= instance.OnMove;
+            @FastMode.started -= instance.OnFastMode;
+            @FastMode.performed -= instance.OnFastMode;
+            @FastMode.canceled -= instance.OnFastMode;
         }
 
-        public void RemoveCallbacks(IPlayerActions instance)
+        public void RemoveCallbacks(IMapPlayerActions instance)
         {
-            if (m_Wrapper.m_PlayerActionsCallbackInterfaces.Remove(instance))
+            if (m_Wrapper.m_MapPlayerActionsCallbackInterfaces.Remove(instance))
                 UnregisterCallbacks(instance);
         }
 
-        public void SetCallbacks(IPlayerActions instance)
+        public void SetCallbacks(IMapPlayerActions instance)
         {
-            foreach (var item in m_Wrapper.m_PlayerActionsCallbackInterfaces)
+            foreach (var item in m_Wrapper.m_MapPlayerActionsCallbackInterfaces)
                 UnregisterCallbacks(item);
-            m_Wrapper.m_PlayerActionsCallbackInterfaces.Clear();
+            m_Wrapper.m_MapPlayerActionsCallbackInterfaces.Clear();
             AddCallbacks(instance);
         }
     }
-    public PlayerActions @Player => new PlayerActions(this);
-    public interface IPlayerActions
+    public MapPlayerActions @MapPlayer => new MapPlayerActions(this);
+    public interface IMapPlayerActions
     {
-        void OnOptionsPanel(InputAction.CallbackContext context);
+        void OnMove(InputAction.CallbackContext context);
+        void OnFastMode(InputAction.CallbackContext context);
     }
 }

@@ -10,9 +10,11 @@ namespace MapAssets.Scripts
         [SerializeField] private float boost = 1.75f;
         [SerializeField] private bool IsFastMode;
         [SerializeField] private float RotationSpeed = 10f;
+
+        [SerializeField] private GameInput _gameInput;
         private void Update()
         {
-            Vector3 inputDirection = GameInput.Instance.GetNormalizedMovementVector(out IsFastMode);
+            Vector3 inputDirection = _gameInput.GetNormalizedMovementVector(out IsFastMode);
             Vector3 moveDirectionVector = new Vector3(inputDirection.x,0f,inputDirection.y);
             if (IsFastMode)
             {

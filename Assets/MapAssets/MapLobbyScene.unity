@@ -152,6 +152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1188490e95557d943b5467c85ac4de7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _isFastMode: 0
 --- !u!4 &157444340
 Transform:
   m_ObjectHideFlags: 0
@@ -597,6 +598,7 @@ MonoBehaviour:
   boost: 1.75
   IsFastMode: 0
   RotationSpeed: 10
+  _gameInput: {fileID: 157444339}
 --- !u!1 &872298642
 GameObject:
   m_ObjectHideFlags: 0
