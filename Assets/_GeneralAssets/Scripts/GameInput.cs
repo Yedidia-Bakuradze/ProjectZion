@@ -1,14 +1,12 @@
-using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.TestTools;
 
 namespace _GeneralAssets.Scripts
 {
     public class GameInput : MonoBehaviour
     {
         private PlayerInputActions _playerInputActions;
-        [SerializeField] private bool _isFastMode = false;
+        [SerializeField] private bool _isFastMode;
 
         private void Awake()
         {
@@ -18,6 +16,7 @@ namespace _GeneralAssets.Scripts
 
         private void Start()
         {
+            _isFastMode = false;
             _playerInputActions.MapPlayer.FastMode.performed += FastMode_Performed;
             _playerInputActions.MapPlayer.FastMode.canceled += FastMode_Canceled;
         }
