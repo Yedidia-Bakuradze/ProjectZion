@@ -1,3 +1,4 @@
+using _GeneralAssets.Scripts;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -11,31 +12,7 @@ namespace MapAssets.Scripts
         [SerializeField] private float RotationSpeed = 10f;
         private void Update()
         {
-            IsFastMode = false;
-            Vector2 inputDirection = new Vector2();
-            if (Input.GetKey(KeyCode.W))
-            {
-                inputDirection.y++;
-            }
-            if (Input.GetKey(KeyCode.A))
-            {
-                inputDirection.x--;
-            }
-            if (Input.GetKey(KeyCode.S))
-            {
-                inputDirection.y--;
-            }
-            if (Input.GetKey(KeyCode.D))
-            {
-                inputDirection.x++;
-            }
-
-            if (Input.GetKey(KeyCode.LeftShift))
-            {
-                IsFastMode = true;
-            }
-
-            inputDirection = inputDirection.normalized;
+            Vector3 inputDirection = GameInput.Instance.GetNormalizedMovementVector(out IsFastMode);
             Vector3 moveDirectionVector = new Vector3(inputDirection.x,0f,inputDirection.y);
             if (IsFastMode)
             {
