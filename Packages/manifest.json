@@ -2,7 +2,7 @@
   "scopedRegistries": [
     {
       "name": "Maps SDK for Unity",
-      "url": "https://unity.virtualearth.net/npm/registry",
+      "url": "https://unity.virtualearth.net/npm/registry/",
       "scopes": [
         "com.microsoft.maps"
       ]
@@ -10,6 +10,7 @@
   ],
   "dependencies": {
     "com.microsoft.maps.unity": "0.11.2",
+    "com.microsoft.maps.unity.urp": "https://github.com/microsoft/MapsSDK-Unity.git?path=/UPM/com.microsoft.maps.unity.urp",
     "com.unity.cinemachine": "2.9.7",
     "com.unity.collab-proxy": "2.2.0",
     "com.unity.ide.rider": "3.0.26",
