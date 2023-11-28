@@ -11,8 +11,7 @@ namespace MapAssets.Scripts
         [SerializeField] private SplineContainer _splineContainer;
         [SerializeField] private int _splineContainerIndex;
         [SerializeField] private float time;
-        [SerializeField] private Transform p1;
-        [SerializeField] private Transform p2;
+        [SerializeField] private Transform player;
 
         private float3 position;
         private float3 tangent;
@@ -26,13 +25,19 @@ namespace MapAssets.Scripts
 
         private void Update()
         {
-            
-            time = (time + Time.deltaTime*0.1f)%1;
+            if (time is >= 1f or <= 0)
+                time = 0;
+            if (Input.GetKey(KeyCode.A))
+            {
+                time += Time.deltaTime * 0.1f;
+            }
+
+            if (Input.GetKey(KeyCode.D))
+            {
+                time -= Time.deltaTime * 0.1f;
+            }
             _splineContainer.Evaluate(_splineContainerIndex, time, out position, out tangent, out upVector);
-            float3 right = Vector3.Cross(tangent, upVector).normalized;
-            p1.position = position + (right * width);
-            p2.position = position + (-right * width);
-            
+            player.position = position;
         }
     }
 }
