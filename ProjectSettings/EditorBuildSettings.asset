@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/GameStartHubAssets/StartingHubScene.unity
     guid: 68028f771de877f4cbba3ba019390c26
+  - enabled: 1
+    path: Assets/MiniGamesAssets/Yedidia/scene_night.unity
+    guid: 782f1cb7aafe83540be8e318f12196c1
   m_configObjects: {}
