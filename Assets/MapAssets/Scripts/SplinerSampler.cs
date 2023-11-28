@@ -12,10 +12,12 @@ namespace MapAssets.Scripts
         [SerializeField] private int _splineContainerIndex;
         [SerializeField] private float time;
         [SerializeField] private Transform p1;
+        [SerializeField] private Transform p2;
 
         private float3 position;
         private float3 tangent;
         private float3 upVector;
+        [SerializeField] private float width;
 
         private void Start()
         {
@@ -24,14 +26,13 @@ namespace MapAssets.Scripts
 
         private void Update()
         {
+            
             time = (time + Time.deltaTime*0.1f)%1;
             _splineContainer.Evaluate(_splineContainerIndex, time, out position, out tangent, out upVector);
-            OnDrawGizmos();
-        }
-
-        private void OnDrawGizmos()
-        {
-            p1.position = position;
+            float3 right = Vector3.Cross(tangent, upVector).normalized;
+            p1.position = position + (right * width);
+            p2.position = position + (-right * width);
+            
         }
     }
 }
