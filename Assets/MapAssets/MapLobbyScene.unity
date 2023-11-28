@@ -2302,7 +2302,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2110542569}
   - component: {fileID: 2110542568}
-  - component: {fileID: 2110542570}
   - component: {fileID: 2110542571}
   m_Layer: 0
   m_Name: Spline
@@ -12329,24 +12328,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2110542570
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2110542567}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a570b53d0706142448a1281f20f3a27f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _splineContainer: {fileID: 2110542568}
-  _splineContainerIndex: 0
-  time: 0.060856763
-  p1: {fileID: 0}
-  p2: {fileID: 0}
-  width: 5
 --- !u!114 &2110542571
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12360,14 +12341,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Container: {fileID: 2110542568}
-  m_ItemsToInstantiate:
-  - prefab: {fileID: 0}
-    Prefab: {fileID: 0}
-    probability: 0
-    Probability: 0
+  m_ItemsToInstantiate: []
   m_Method: 1
   m_Space: 0
-  m_Spacing: {x: 4.32, y: 4.32}
+  m_Spacing: {x: 3.13, y: 3.13}
   m_Up: 1
   m_Forward: 2
   m_PositionOffset:
