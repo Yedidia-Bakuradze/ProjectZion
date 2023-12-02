@@ -34,15 +34,6 @@ namespace MapAssets.Scripts
             
             transform.forward = Vector3.Slerp(transform.forward, moveDirectionVector,Time.deltaTime*RotationSpeed);
         }
-        public bool GetIsPlayerWalking()
-        {
-            return IsWalking;
-        }
-
-        public bool GetIsPlayerRunning()
-        {
-            return IsRunning;
-        }
     }
         
 }

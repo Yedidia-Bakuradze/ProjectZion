@@ -4,7 +4,8 @@ public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private CharacterController _characterController;
 
-    [SerializeField] private float speed = 12f;
+    [SerializeField] private float speedRate = 12f;
+    [SerializeField] private float boostRate = 24f;
     [SerializeField] private float gravity = -9.81f * 2;
     [SerializeField] private float jumpHeight = 3f;
 
@@ -13,8 +14,11 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private LayerMask groundMask;
 
     private Vector3 velocity;
+    private Vector3 move;
 
+    private float speed;
     private bool isGrounded;
+    private bool isJumped;
 
 
     private void Awake()
@@ -34,17 +38,38 @@ public class PlayerMovement : MonoBehaviour
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
 
-        Vector3 move = transform.right * x + transform.forward * z;
-
+        move = transform.right * x + transform.forward * z;
+        speed = (Input.GetKey(KeyCode.LeftShift)) ? boostRate : speedRate;
         _characterController.Move(move * (speed * Time.deltaTime));
 
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
+            isJumped = true;
+        }
+        else
+        {
+            isJumped = false;
         }
 
         velocity.y += gravity * Time.deltaTime;
 
         _characterController.Move(velocity * Time.deltaTime);
+    }
+
+
+    public bool IsPlayerMoving()
+    {
+        return move != Vector3.zero;
+    }
+
+    public bool IsPlayerOnBoostMove()
+    {
+        return speed == boostRate;
+    }
+
+    public bool IsPlayerJumping()
+    {
+        return isJumped;
     }
 }

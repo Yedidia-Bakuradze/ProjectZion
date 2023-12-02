@@ -7,9 +7,10 @@ namespace MiniGamesAssets.Yedidia.Scripts
     {
         private const string Is_Walking = "IsWalking";
         private const string Is_Running = "IsRunning";
+        private const string Jump = "Jump";
         
         
-        [SerializeField] private Player player;
+        [SerializeField] private PlayerMovement player;
         private Animator _animator;
         private void Awake()
         {
@@ -18,8 +19,12 @@ namespace MiniGamesAssets.Yedidia.Scripts
 
         private void Update()
         {
-            _animator.SetBool(Is_Walking,player.GetIsPlayerWalking());
-            _animator.SetBool(Is_Running, player.GetIsPlayerRunning());
+            _animator.SetBool(Is_Walking,player.IsPlayerMoving());
+            _animator.SetBool(Is_Running, player.IsPlayerOnBoostMove());
+            if (player.IsPlayerJumping())
+            {
+                _animator.SetTrigger(Jump);
+            }
         }
     }
 }
