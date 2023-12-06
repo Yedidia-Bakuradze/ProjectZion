@@ -3,7 +3,6 @@ using UnityEngine;
 public class MouseMovement : MonoBehaviour
 {
     [SerializeField] private float mouseSensitivity = 100f;
-    private float xRotation = 0f;
     private float yRotation = 0f;
 
 

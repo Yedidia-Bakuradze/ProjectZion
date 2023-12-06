@@ -16,14 +16,17 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 velocity;
     private Vector3 move;
 
+    public static PlayerMovement Instance;
     private float speed;
     private bool isGrounded;
+    public int points;
     private bool isJumped;
 
 
     private void Awake()
     {
         _characterController = GetComponent<CharacterController>();
+        Instance = this;
     }
 
     private void Update()
