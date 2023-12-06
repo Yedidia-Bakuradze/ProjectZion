@@ -8,9 +8,14 @@ namespace MapAssets.Scripts
     {
         [SerializeField] private float movingSpeed = 5f;
         [SerializeField] private float boost = 1.75f;
-        [FormerlySerializedAs("IsFastMode")] [SerializeField] private bool IsRunning;
+        [SerializeField] private bool IsRunning;
         [SerializeField] private bool IsWalking;
         [SerializeField] private float RotationSpeed = 10f;
+
+
+        [SerializeField] private AnimationCurve _animationCurve;
+        [SerializeField] private float time;
+        [SerializeField] private LayerMask WhatIsGround;
 
         [SerializeField] private GameInput _gameInput;
         private void Update()
@@ -28,17 +33,6 @@ namespace MapAssets.Scripts
             }
             
             transform.forward = Vector3.Slerp(transform.forward, moveDirectionVector,Time.deltaTime*RotationSpeed);
-            
-        }
-
-        public bool GetIsPlayerWalking()
-        {
-            return IsWalking;
-        }
-
-        public bool GetIsPlayerRunning()
-        {
-            return IsRunning;
         }
     }
         
